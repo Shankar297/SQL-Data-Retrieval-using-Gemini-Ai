@@ -36,8 +36,13 @@ prompt=[
     SECTION, MARKS \n\nFor example,\nExample 1 - How many entries of records are present?, 
     the SQL command will be something like this SELECT COUNT(*) FROM STUDENT ;
     \nExample 2 - Tell me all the students studying in Data Science class?, 
-    the SQL command will be something like this SELECT * FROM STUDENT 
+    the SQL command will be something like this 
+    SELECT NAME, CLASS, SECTION, MARKS FROM STUDENT
     where CLASS="Data Science"; 
+    \nExample 3 - show me students has mark greater than or equal to 90?, 
+    the SQL command will be something like this 
+    SELECT NAME, CLASS, SECTION, MARKS FROM STUDENT
+    where MARKS >= 90; 
     also the sql code should not have ``` in beginning or end and sql word in output
 
     """
@@ -61,4 +66,4 @@ if submit:
     st.header("The Result is")
     for row in response:
         print(row)
-        st.subheader(row[0])
+        st.subheader(row)
